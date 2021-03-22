@@ -33,6 +33,7 @@ class ListViewController : UIViewController {
     tableView.rowHeight = 80
     tableView.isUserInteractionEnabled = false
     tableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.identifier)
+    tableView.register(MemoCellWithImage.self, forCellReuseIdentifier: MemoCellWithImage.identifier)
     view.addSubview(tableView)
     
     tableView.snp.makeConstraints {
@@ -53,8 +54,13 @@ extension ListViewController : UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.identifier, for: indexPath)
-    return cell
+    if indexPath.row == 0 {
+      let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.identifier, for: indexPath) as! MemoCell
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(withIdentifier: MemoCellWithImage.identifier, for: indexPath) as! MemoCellWithImage
+      return cell
+    }
   }
 }
   //MARK: - UITableViewDelegate
