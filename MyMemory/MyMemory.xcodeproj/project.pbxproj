@@ -15,6 +15,7 @@
 		0F5AC2122608F37F00AF48E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5AC2102608F37F00AF48E1 /* LaunchScreen.storyboard */; };
 		0F5AC21E2608FA3500AF48E1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AC21D2608FA3500AF48E1 /* ListViewController.swift */; };
 		0F5AC2252608FDE000AF48E1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5AC2242608FDE000AF48E1 /* SnapKit */; };
+		0F5AC228260901B300AF48E1 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AC227260901B300AF48E1 /* MemoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0F5AC2112608F37F00AF48E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F5AC2132608F37F00AF48E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F5AC21D2608FA3500AF48E1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0F5AC227260901B300AF48E1 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		0F5AC2212608FCB200AF48E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F5AC227260901B300AF48E1 /* MemoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5AC20D2608F37F00AF48E1 /* MyMemory.xcdatamodeld in Sources */,
+				0F5AC228260901B300AF48E1 /* MemoCell.swift in Sources */,
 				0F5AC2032608F37F00AF48E1 /* AppDelegate.swift in Sources */,
 				0F5AC21E2608FA3500AF48E1 /* ListViewController.swift in Sources */,
 				0F5AC2052608F37F00AF48E1 /* SceneDelegate.swift in Sources */,

@@ -32,7 +32,7 @@ class ListViewController : UIViewController {
     tableView.tableFooterView = UIView()
     tableView.rowHeight = 80
     tableView.isUserInteractionEnabled = false
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.identifier)
     view.addSubview(tableView)
     
     tableView.snp.makeConstraints {
@@ -53,8 +53,7 @@ extension ListViewController : UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    cell.backgroundColor = .blue
+    let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.identifier, for: indexPath)
     return cell
   }
 }
