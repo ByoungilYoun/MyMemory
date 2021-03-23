@@ -32,7 +32,7 @@ class ListViewController : UIViewController {
     tableView.delegate = self
     tableView.tableFooterView = UIView()
     tableView.rowHeight = 80
-    tableView.isUserInteractionEnabled = false
+//    tableView.isUserInteractionEnabled = false
     tableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.identifier)
     tableView.register(MemoCellWithImage.self, forCellReuseIdentifier: MemoCellWithImage.identifier)
     view.addSubview(tableView)
@@ -58,14 +58,22 @@ extension ListViewController : UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if indexPath.row == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.identifier, for: indexPath) as! MemoCell
+      cell.selectionStyle = .none
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: MemoCellWithImage.identifier, for: indexPath) as! MemoCellWithImage
+      cell.selectionStyle = .none
       return cell
     }
   }
 }
   //MARK: - UITableViewDelegate
 extension ListViewController : UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    print("123")
+//    let cell = tableView.cellForRow(at: indexPath) as! MemoCell
+//
+    let controller = MemoPreviewController()
+    navigationController?.pushViewController(controller, animated: true)
+  }
 }

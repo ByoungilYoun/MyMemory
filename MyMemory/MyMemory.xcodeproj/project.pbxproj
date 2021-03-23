@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F129A2C260A4B2E00787A39 /* MemoWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F129A2B260A4B2E00787A39 /* MemoWritingViewController.swift */; };
+		0F129A32260A59B100787A39 /* MemoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F129A31260A59B100787A39 /* MemoPreviewController.swift */; };
 		0F5AC2032608F37F00AF48E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AC2022608F37F00AF48E1 /* AppDelegate.swift */; };
 		0F5AC2052608F37F00AF48E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AC2042608F37F00AF48E1 /* SceneDelegate.swift */; };
 		0F5AC20A2608F37F00AF48E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5AC2082608F37F00AF48E1 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0F129A2B260A4B2E00787A39 /* MemoWritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWritingViewController.swift; sourceTree = "<group>"; };
+		0F129A31260A59B100787A39 /* MemoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoPreviewController.swift; sourceTree = "<group>"; };
 		0F5AC1FF2608F37F00AF48E1 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5AC2022608F37F00AF48E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5AC2042608F37F00AF48E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				0F5AC21D2608FA3500AF48E1 /* ListViewController.swift */,
 				0F129A2B260A4B2E00787A39 /* MemoWritingViewController.swift */,
+				0F129A31260A59B100787A39 /* MemoPreviewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			files = (
 				0F129A2C260A4B2E00787A39 /* MemoWritingViewController.swift in Sources */,
 				0F5AC20D2608F37F00AF48E1 /* MyMemory.xcdatamodeld in Sources */,
+				0F129A32260A59B100787A39 /* MemoPreviewController.swift in Sources */,
 				0F5AC228260901B300AF48E1 /* MemoCell.swift in Sources */,
 				0F5AC2032608F37F00AF48E1 /* AppDelegate.swift in Sources */,
 				0F5AC22B2609054D00AF48E1 /* MemoCellWithImage.swift in Sources */,
