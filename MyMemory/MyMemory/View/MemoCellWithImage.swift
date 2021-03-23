@@ -21,7 +21,7 @@ class MemoCellWithImage : UITableViewCell {
   let titleLabel : UILabel = {
     let lb = UILabel()
     lb.font = UIFont.boldSystemFont(ofSize: 14)
-    lb.textColor = .label
+    lb.textColor = .black
     lb.text = "글의 제목2"
     return lb
   }()
@@ -31,7 +31,7 @@ class MemoCellWithImage : UITableViewCell {
     lb.font = UIFont.systemFont(ofSize: 12)
     lb.numberOfLines = 2
     lb.text = "서브 라벨 입니다."
-    lb.textColor = .label
+    lb.textColor = .black
     lb.lineBreakMode = .byTruncatingTail
     return lb
   }()
@@ -41,7 +41,7 @@ class MemoCellWithImage : UITableViewCell {
     lb.font = UIFont.systemFont(ofSize: 11)
     lb.textAlignment = .right
     lb.numberOfLines = 2
-    lb.textColor = .label
+    lb.textColor = .black
     lb.text = "2020-12-15\n 20:01:01"
     lb.lineBreakMode = .byWordWrapping
     return lb
@@ -59,13 +59,14 @@ class MemoCellWithImage : UITableViewCell {
   
   //MARK: - configureUI()
   private func configureUI() {
+    backgroundColor = .white
     [myImageView, titleLabel, subTitleLabel, timeLabel].forEach {
       contentView.addSubview($0)
     }
     
     myImageView.snp.makeConstraints {
       $0.top.equalTo(self.snp.top).offset(10)
-      $0.leading.equalTo(self.snp.leading).offset(5)
+      $0.leading.equalTo(self.snp.leading).offset(10)
       $0.width.height.equalTo(50)
     }
     

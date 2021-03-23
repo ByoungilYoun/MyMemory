@@ -27,6 +27,7 @@ class ListViewController : UIViewController {
   }
   
   private func configureUI() {
+    tableView.backgroundColor = .white
     tableView.dataSource = self
     tableView.delegate = self
     tableView.tableFooterView = UIView()
@@ -43,7 +44,8 @@ class ListViewController : UIViewController {
   
   //MARK: - objc func
   @objc func plusButtonClicked() {
-    print("123")
+    let controller = MemoWritingViewController()
+    navigationController?.pushViewController(controller, animated: true)
   }
 }
 

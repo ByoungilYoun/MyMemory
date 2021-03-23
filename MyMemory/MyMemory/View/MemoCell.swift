@@ -15,7 +15,7 @@ class MemoCell : UITableViewCell {
   let titleLabel : UILabel = {
     let lb = UILabel()
     lb.font = UIFont.boldSystemFont(ofSize: 14)
-    lb.textColor = .label
+    lb.textColor = .black
     lb.text = "글의 제목"
     return lb
   }()
@@ -25,7 +25,7 @@ class MemoCell : UITableViewCell {
     lb.font = UIFont.systemFont(ofSize: 12)
     lb.numberOfLines = 2
     lb.text = "서브 라벨 입니다."
-    lb.textColor = .label
+    lb.textColor = .black
     lb.lineBreakMode = .byTruncatingTail // line break 속성 (마지막 라인의 뒷부분을 잘라내어 말줄임표로 처리)
     return lb
   }()
@@ -35,7 +35,7 @@ class MemoCell : UITableViewCell {
     lb.font = UIFont.systemFont(ofSize: 11)
     lb.textAlignment = .right
     lb.numberOfLines = 2
-    lb.textColor = .label
+    lb.textColor = .black
     lb.text = "2020-12-15\n 20:01:01"
     lb.lineBreakMode = .byWordWrapping
     return lb
@@ -53,6 +53,7 @@ class MemoCell : UITableViewCell {
   
   //MARK: - configureUI()
   private func configureUI() {
+    backgroundColor = .white
     [titleLabel, subTitleLabel, timeLabel].forEach {
       contentView.addSubview($0)
     }
