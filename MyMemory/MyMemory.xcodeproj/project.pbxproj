@@ -19,6 +19,7 @@
 		0F5AC2252608FDE000AF48E1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0F5AC2242608FDE000AF48E1 /* SnapKit */; };
 		0F5AC228260901B300AF48E1 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AC227260901B300AF48E1 /* MemoCell.swift */; };
 		0F5AC22B2609054D00AF48E1 /* MemoCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5AC22A2609054D00AF48E1 /* MemoCellWithImage.swift */; };
+		0F7D3538260E35F600AF52D0 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7D3537260E35F600AF52D0 /* MemoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0F5AC21D2608FA3500AF48E1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0F5AC227260901B300AF48E1 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		0F5AC22A2609054D00AF48E1 /* MemoCellWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCellWithImage.swift; sourceTree = "<group>"; };
+		0F7D3537260E35F600AF52D0 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				0F5AC2022608F37F00AF48E1 /* AppDelegate.swift */,
 				0F5AC2042608F37F00AF48E1 /* SceneDelegate.swift */,
+				0F7D3536260E35DE00AF52D0 /* Model */,
 				0F5AC2212608FCB200AF48E1 /* View */,
 				0F5AC2202608FCAB00AF48E1 /* Controller */,
 				0F5AC2082608F37F00AF48E1 /* Main.storyboard */,
@@ -98,6 +101,14 @@
 				0F5AC22A2609054D00AF48E1 /* MemoCellWithImage.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0F7D3536260E35DE00AF52D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F7D3537260E35F600AF52D0 /* MemoData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				0F5AC228260901B300AF48E1 /* MemoCell.swift in Sources */,
 				0F5AC2032608F37F00AF48E1 /* AppDelegate.swift in Sources */,
 				0F5AC22B2609054D00AF48E1 /* MemoCellWithImage.swift in Sources */,
+				0F7D3538260E35F600AF52D0 /* MemoData.swift in Sources */,
 				0F5AC21E2608FA3500AF48E1 /* ListViewController.swift in Sources */,
 				0F5AC2052608F37F00AF48E1 /* SceneDelegate.swift in Sources */,
 			);

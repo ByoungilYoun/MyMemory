@@ -32,7 +32,6 @@ class ListViewController : UIViewController {
     tableView.delegate = self
     tableView.tableFooterView = UIView()
     tableView.rowHeight = 80
-//    tableView.isUserInteractionEnabled = false
     tableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.identifier)
     tableView.register(MemoCellWithImage.self, forCellReuseIdentifier: MemoCellWithImage.identifier)
     view.addSubview(tableView)

@@ -29,6 +29,9 @@ class MemoWritingViewController : UIViewController {
     view.backgroundColor = .red
     return view
   }()
+  
+  var subject : String! // 메모 제목
+  
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,15 +45,10 @@ class MemoWritingViewController : UIViewController {
     navigationItem.title = "메모 작성"
     navigationController?.navigationBar.tintColor = .label
 
-    let saveButton = UIBarButtonItem()
-    saveButton.title = "저장"
-    saveButton.tintColor = .label
-    
-    let cameraButton = UIBarButtonItem(systemItem: .camera)
-    cameraButton.tintColor = .label
-    
+    let saveButton = UIBarButtonItem(title: "저장", style:.plain, target: self, action: #selector(save))
+    let cameraButton = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: #selector(pick))
     navigationItem.rightBarButtonItems = [cameraButton, saveButton]
-    
+   
       }
   
   //MARK: - configureUI()
@@ -71,5 +69,25 @@ class MemoWritingViewController : UIViewController {
       $0.leading.equalToSuperview().offset(10)
       $0.width.height.equalTo(250)
     }
+  }
+
+  //MARK: - @objc func
+  @objc func save() {
+    print("안녕")
+  }
+  
+  @objc func pick() {
+    let picker = UIImagePickerController()
+    picker.delegate = self
+    picker.allowsEditing = true // 이미지 피커 컨트롤러의 편집창 속성, true 일때만 나타난다.
+    self.present(picker, animated: true, completion: nil)
+  }
+}
+
+extension MemoWritingViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    // 이미지가 선택되었을때 호출되는 델리게이트 메서드
+    self.myImageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+    picker.dismiss(animated: true, completion: nil)
   }
 }
