@@ -53,6 +53,9 @@ class MemoWritingViewController : UIViewController {
   
   //MARK: - configureUI()
   private func configureUI() {
+    
+    textView.delegate = self
+    
     [textView, myImageView].forEach {
       view.addSubview($0)
     }
@@ -84,10 +87,22 @@ class MemoWritingViewController : UIViewController {
   }
 }
 
+  //MARK: - extension UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension MemoWritingViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     // 이미지가 선택되었을때 호출되는 델리게이트 메서드
     self.myImageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
     picker.dismiss(animated: true, completion: nil)
+  }
+}
+
+  //MARK: -  extension UITextViewDelegate
+extension MemoWritingViewController : UITextViewDelegate {
+  func textViewDidChange(_ textView: UITextView) {
+    // 내용의 최대 15자리까지 읽어 subject 변수에 저장한다.
+    let contents = textView.text as NSString // 텍스트 뷰의 내용을 읽어 NSString 타입의 변수에 저장한다.
+    let length = ((contents.length > 15)) ? 15 : contents.length // 읽어온 내용이 15자리보다 길 경우 15 자리 까지만, 그보다 짧을 경우 글 전체 내용을 가져온다.
+    self.subject = contents.substring(with: NSRange(location: 0, length: length)) // 최대 15자리까지의 내용을 subject 변수에 저장한다.
+    self.navigationItem.title = subject // 이렇게 뽑아낸 제목을 내비게이션 타이틀에 표시한다. 
   }
 }
