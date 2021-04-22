@@ -95,7 +95,11 @@ extension ListViewController : UITableViewDataSource {
   //MARK: - UITableViewDelegate
 extension ListViewController : UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // memolist 배열에서 선택된 행에 맞는 데이터를 꺼낸다.
+    let row = self.appDelegate.memoList[indexPath.row]
+    
     let controller = MemoPreviewController()
+    controller.data = row
     navigationController?.pushViewController(controller, animated: true)
   }
 }

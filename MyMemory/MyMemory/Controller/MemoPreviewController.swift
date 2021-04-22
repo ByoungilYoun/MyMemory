@@ -29,10 +29,13 @@ class MemoPreviewController : UIViewController {
     view.backgroundColor = .blue
     return view
   }()
+  
+  var data : MemoData?
   //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    setData()
   }
   
   //MARK: - configureUI()
@@ -58,6 +61,17 @@ class MemoPreviewController : UIViewController {
       $0.width.height.equalTo(200)
       
     }
+  }
+  
+  func setData() {
+    self.myTitle.text = data?.title
+    self.myContent.text = data?.contents
+    self.myImageView.image = data?.image
     
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd일 HH:mm분에 작성됨"
+    let dateString = formatter.string(from: (data?.regdate)!)
+    
+    self.navigationItem.title = dateString
   }
 }
