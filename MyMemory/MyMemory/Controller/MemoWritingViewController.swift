@@ -76,7 +76,26 @@ class MemoWritingViewController : UIViewController {
 
   //MARK: - @objc func
   @objc func save() {
-    print("안녕")
+    // 내용을 입력하지 않았을 경우 경고
+    guard self.textView.text.isEmpty == false  else {
+      let alert = UIAlertController(title: nil, message: "내용을 입력해주세요.", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+      return
+    }
+    
+    // MemoData() 객체를 생성하고, 데이터를 담는다.
+    var data = MemoData()
+    data.title = self.subject
+    data.contents = self.textView.text
+    data.image = self.myImageView.image
+    data.regdate = Date() // 작성 시각
+    
+    // 앱 델리게이트 객체를 읽어온 다음, meolist 배열에 MemoData 객체를 추가한다.
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    appDelegate.memoList.append(data)
+    
+    self.navigationController?.popViewController(animated: true)
   }
   
   @objc func pick() {
@@ -103,6 +122,6 @@ extension MemoWritingViewController : UITextViewDelegate {
     let contents = textView.text as NSString // 텍스트 뷰의 내용을 읽어 NSString 타입의 변수에 저장한다.
     let length = ((contents.length > 15)) ? 15 : contents.length // 읽어온 내용이 15자리보다 길 경우 15 자리 까지만, 그보다 짧을 경우 글 전체 내용을 가져온다.
     self.subject = contents.substring(with: NSRange(location: 0, length: length)) // 최대 15자리까지의 내용을 subject 변수에 저장한다.
-    self.navigationItem.title = subject // 이렇게 뽑아낸 제목을 내비게이션 타이틀에 표시한다. 
+    self.navigationItem.title = subject // 이렇게 뽑아낸 제목을 내비게이션 타이틀에 표시한다.
   }
 }
